@@ -1,0 +1,34 @@
+//
+// Colors
+//
+
+$global-color:                                   #666 !default;
+$global-emphasis-color:                          #333 !default;
+$global-muted-color:                             #999 !default;
+
+$global-link-color:                              #4AA950 !default;
+$global-link-hover-color:                        darken($global-link-color, 10%)!default;
+
+$global-inverse-color:                           #fff !default;
+
+//
+// Backgrounds
+//
+
+$main-background:                                #FFF;
+
+$global-background:                              #FFFFFF;
+
+$global-muted-background:                        #ededed;
+$global-primary-background:                      #4AA950;
+$global-secondary-background:                    #28464B;
+
+$global-success-background:                      #4AA950 !default;
+$global-warning-background:                      #F9DC5C;
+$global-danger-background:                       #ED254E;
+
+$navbar-background:                               $global-primary-background;
+
+$offcanvas-bar-background: #fff;
+$offcanvas-bar-color-mode: none; 
+
