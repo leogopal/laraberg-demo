@@ -15667,6 +15667,7 @@ html {
   position: relative;
   padding: 100px 0 100px 0;
   height: 350px;
+  z-index: 1;
 }
 
 .svg-overlay {

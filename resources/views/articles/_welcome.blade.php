@@ -7,7 +7,7 @@
                 <p>
                     Welcome to the Laraberg demo. Here you can give the latest version of Laraberg a try.
                     Laraberg aims to provide an easy way to use Gutenberg in your Laravel projects.
-                    This is achieved by taking <a href="https://github.com/front/gutenberg-js">GutenbergJS</a> and implementing all the API-endpoints and editor settings it expects. 
+                    This is achieved by taking <a href="https://github.com/front/gutenberg-js">GutenbergJS</a> and implementing all the API-endpoints and editor settings it needs. 
                     Please report any issues you find to the Laraberg or the Laraberg Demo Github project.
                 </p>
             </div>
