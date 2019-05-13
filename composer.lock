@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "77a0a2659e3574e99da92c9de156f482",
+    "content-hash": "e4be1d1ce824ffbde7b0e250d6829ccb",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -2996,6 +2996,7 @@
         },
         {
             "name": "van-ons/laraberg",
+<<<<<<< HEAD
             "version": "v0.0.4-beta",
             "source": {
                 "type": "git",
@@ -3007,6 +3008,13 @@
                 "url": "https://api.github.com/repos/VanOns/laraberg/zipball/fa53d226db2db69fb5c172f2e3f93c28f3840693",
                 "reference": "fa53d226db2db69fb5c172f2e3f93c28f3840693",
                 "shasum": ""
+=======
+            "version": "dev-dev",
+            "dist": {
+                "type": "path",
+                "url": "./../laraberg",
+                "reference": "0bca945327a7cb3b6d83380c7a4d5d48d5f02dcb"
+>>>>>>> Add symlinked local laraberg repo
             },
             "require": {
                 "embed/embed": "^3.3"
@@ -3026,7 +3034,11 @@
                     "VanOns\\Laraberg\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "VanOns\\Laraberg\\Test\\": "tests"
+                }
+            },
             "license": [
                 "GPL-3.0-or-later"
             ],
@@ -3036,8 +3048,12 @@
                     "email": "maurice@van-ons.nl"
                 }
             ],
+<<<<<<< HEAD
             "description": "A Gutenberg implementation for Laravel",
             "time": "2019-05-13T15:32:25+00:00"
+=======
+            "description": "A Gutenberg implementation for Laravel"
+>>>>>>> Add symlinked local laraberg repo
         },
         {
             "name": "vlucas/phpdotenv",
