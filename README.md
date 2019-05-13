@@ -1,5 +1,5 @@
 # Laraberg Demo
-This is a demo application for [Laraberg](https://github.com/VanOns/laraberg). A live version of this project can found over at [laraberg.io](http://laraberg.io).
+This is a demo application for [Laraberg](https://github.com/VanOns/laraberg). A live version of this project can found over at [laraberg.io](http://demo.laraberg.io).
 
 # Setup
 
