@@ -7,11 +7,10 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>@yield('title')</title>
 
-  <link rel="preload" href="../fonts/ProximaNova-Light-webfont.woff2" as="font" type="font/woff2" crossorigin="">
-  <link rel="preload" href="../fonts/ProximaNova-Reg-webfont.woff2" as="font" type="font/woff2" crossorigin="">
-
   <script src="https://unpkg.com/react@16.6.3/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@16.6.3/umd/react-dom.production.min.js"></script>
+  {{-- <script src="https://unpkg.com/react@16.6.3/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.6.3/umd/react-dom.development.js"></script> --}}
   <script src="https://unpkg.com/moment@2.22.1/min/moment.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 

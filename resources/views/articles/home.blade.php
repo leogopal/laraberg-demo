@@ -8,7 +8,7 @@
 
 @section('content')
     @include('articles._welcome')
-    <div class="uk-section">
+    <div class="">
         <div class="uk-container uk-container-small">
             @include('articles._errors')
             @if ($articles->count())

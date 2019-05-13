@@ -15615,7 +15615,7 @@ iframe.uk-cover {
 }
 
 html {
-  font-family: ProximaNova, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: proxima-nova, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 15px;
   font-weight: normal;
   line-height: 1.5;
@@ -15649,12 +15649,12 @@ html {
 }
 
 .top-content-background {
-  background: rgba(0, 0, 0, 0.3) url(/images/hi.jpg?0955018b43796baa1df2bec3ff94882c);
+  background: rgba(0, 0, 0, 0.4) url(/images/blocks.jpg?34557e5b272c224faee73289ff12e9e6);
   background-blend-mode: overlay;
   background-position: center;
   background-size: cover;
-  -webkit-filter: blur(8px);
-          filter: blur(8px);
+  -webkit-filter: blur(5px) hue-rotate(185deg) saturate(65%);
+          filter: blur(5px) hue-rotate(185deg) saturate(65%);
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   position: absolute;
@@ -15666,7 +15666,7 @@ html {
 .top-content-container {
   position: relative;
   padding: 100px 0 100px 0;
-  height: 350px;
+  height: 300px;
   z-index: 1;
 }
 
@@ -15747,5 +15747,16 @@ form {
 
 .side-nav-panel {
   height: 100%;
+}
+
+.article-excerpt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-height: 1.5em;
+  max-height: 4.5em;
 }
 

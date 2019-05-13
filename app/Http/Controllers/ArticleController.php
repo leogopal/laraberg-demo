@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
+use Illuminate\Support\Facades\Log;
 
 class ArticleController extends Controller
 {
-
     public function __construct()
     {   $this->errors = new MessageBag();
         $this->middleware(function($request, $next) {
@@ -57,6 +57,7 @@ class ArticleController extends Controller
     public function store(Request $request) {
         $article = new Article;
         $article->title = $request->title;
+        $article->excerpt = $request->excerpt;
         $article->save();
         $article->setContent($request->content, true);
         return redirect()->route('articles.show', $article);

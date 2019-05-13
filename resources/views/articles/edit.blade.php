@@ -10,8 +10,11 @@
                 @method('PUT')
                 @csrf
                 <fieldset class="uk-fieldset">
+                <div class="laraberg-sidebar">
+                <textarea name="excerpt" placeholder="Excerpt">{{ $article->excerpt }}</textarea>
+                </div>
                 <div class="uk-margin">
-                    <input type="text" class="uk-input uk-form-large {{ $errors->get('title') ? 'uk-form-danger' : '' }}" name="title" placeholder="Title" value="{{$article->title}}">
+                    <input type="text" class="uk-input uk-form-large laraberg-sidebar {{ $errors->get('title') ? 'uk-form-danger' : '' }}" name="title" placeholder="Title" value="{{$article->title}}">
                 </div>
                 <div class="uk-margin">
                     <textarea name="content" id="content" hidden>{{ $article->getRawContent() }}</textarea>
@@ -27,6 +30,6 @@
 
 <script>
   window.addEventListener('DOMContentLoaded', () => {
-    Laraberg.init('content', { minHeight: '480px', laravelFilemanager: true })
+    Laraberg.init('content', { minHeight: '480px', laravelFilemanager: true, sidebar: true })
   })
 </script>
