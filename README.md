@@ -14,8 +14,8 @@ Then you have to publish all vendor assets:
 
 ```
 php artisan vendor:publish
-
 ```
+
 Before running the database migrations you have to setup a database connection in the `.env` file. Then you can run:
 
 ```
