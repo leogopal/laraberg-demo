@@ -36,14 +36,14 @@
             </ul>
         </div>
         <div class="uk-navbar-right">
-            <ul class="uk-navbar-nav uk-visible@m">
+            {{-- <ul class="uk-navbar-nav uk-visible@m">
                 <li>
                     <a href="https://laraberg.io" class="align-icon">
                     <span uk-icon="chevron-left" class="uk-icon"></span>
                     Back to Laraberg.io
                     </a>
                 </li>
-            </ul>
+            </ul> --}}
             <a uk-toggle class="uk-navbar-toggle uk-hidden@m" href="#offcanvas">
                 <span class="uk-margin-small-right uk-visible@s">Menu</span><span uk-navbar-toggle-icon></span>
             </a>
@@ -75,14 +75,14 @@
                     </li>
                 </ul>
                 <div class="flex-1"></div>
-                <ul class="uk-nav uk-nav-default">
+                {{-- <ul class="uk-nav uk-nav-default">
                     <li>
                         <a href="https://laraberg.io" class="align-icon">
                             <span uk-icon="chevron-left" class="uk-icon"></span>
                             Back to Laraberg.io
                         </a>
                     </li>
-                </ul>
+                </ul> --}}
             </div>
         </div>
     </div>
