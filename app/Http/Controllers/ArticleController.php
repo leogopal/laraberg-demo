@@ -71,6 +71,7 @@ class ArticleController extends Controller
     public function update(Request $request, $id)
     {
         $this->article->title = $request->title;
+        $this->article->excerpt = $request->excerpt;
         $this->article->setContent($request->content, true);
         $this->article->save();
         return redirect()->route('articles.show', $this->article);
