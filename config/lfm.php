@@ -124,6 +124,18 @@ return [
         'image/svg+xml',
         'application/pdf',
         'text/plain',
+        'video/3gpp',
+        'video/mp4',
+        'video/mpeg',
+        'video/ogg',
+        'video/quicktime',
+        'video/x-ms-wmv',
+        'video/x-msvideo',
+        'audio/mpeg',
+        'audio/mp3',
+        'audio/mp4',
+        'audio/vnd.wav',
+        'audio/ogg'
     ],
 
     /*
