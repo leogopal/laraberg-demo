@@ -707,16 +707,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.8.16",
+            "version": "v5.8.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "83d57f9f9162ab476c43b9ec00d463ff12c578fd"
+                "reference": "33c04dd2a431adeeb49926a4f2b20590cc033ca2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/83d57f9f9162ab476c43b9ec00d463ff12c578fd",
-                "reference": "83d57f9f9162ab476c43b9ec00d463ff12c578fd",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/33c04dd2a431adeeb49926a4f2b20590cc033ca2",
+                "reference": "33c04dd2a431adeeb49926a4f2b20590cc033ca2",
                 "shasum": ""
             },
             "require": {
@@ -850,7 +850,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-05-07T14:37:11+00:00"
+            "time": "2019-05-14T16:02:41+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2996,25 +2996,11 @@
         },
         {
             "name": "van-ons/laraberg",
-<<<<<<< HEAD
-            "version": "v0.0.4-beta",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/VanOns/laraberg.git",
-                "reference": "fa53d226db2db69fb5c172f2e3f93c28f3840693"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/VanOns/laraberg/zipball/fa53d226db2db69fb5c172f2e3f93c28f3840693",
-                "reference": "fa53d226db2db69fb5c172f2e3f93c28f3840693",
-                "shasum": ""
-=======
             "version": "dev-dev",
             "dist": {
                 "type": "path",
                 "url": "./../laraberg",
-                "reference": "0bca945327a7cb3b6d83380c7a4d5d48d5f02dcb"
->>>>>>> Add symlinked local laraberg repo
+                "reference": "b96b5aff2f996ec87e8438e32186b084bf60dd04"
             },
             "require": {
                 "embed/embed": "^3.3"
@@ -3048,12 +3034,7 @@
                     "email": "maurice@van-ons.nl"
                 }
             ],
-<<<<<<< HEAD
-            "description": "A Gutenberg implementation for Laravel",
-            "time": "2019-05-13T15:32:25+00:00"
-=======
             "description": "A Gutenberg implementation for Laravel"
->>>>>>> Add symlinked local laraberg repo
         },
         {
             "name": "vlucas/phpdotenv",
@@ -4133,16 +4114,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.5.10",
+            "version": "7.5.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "d7d9cee051d03ed98df6023aad93f7902731a780"
+                "reference": "64cb33f5b520da490a7b13149d39b43cf3c890c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/d7d9cee051d03ed98df6023aad93f7902731a780",
-                "reference": "d7d9cee051d03ed98df6023aad93f7902731a780",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/64cb33f5b520da490a7b13149d39b43cf3c890c6",
+                "reference": "64cb33f5b520da490a7b13149d39b43cf3c890c6",
                 "shasum": ""
             },
             "require": {
@@ -4213,7 +4194,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-05-09T05:06:47+00:00"
+            "time": "2019-05-14T04:53:02+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -4876,7 +4857,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "van-ons/laraberg": 10
+        "van-ons/laraberg": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
