@@ -15648,9 +15648,18 @@ html {
   overflow: hidden;
 }
 
+.top-content-background-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  background-position: center;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
 .top-content-background {
-  background: rgba(0, 0, 0, 0.4) url(/images/blocks.jpg?34557e5b272c224faee73289ff12e9e6);
-  background-blend-mode: overlay;
+  background: url(/images/blocks.jpg?34557e5b272c224faee73289ff12e9e6);
   background-position: center;
   background-size: cover;
   -webkit-filter: blur(5px) hue-rotate(185deg) saturate(65%);
@@ -15674,6 +15683,7 @@ html {
   position: absolute;
   width: calc(100%);
   bottom: 0px;
+  z-index: 1;
 }
 
 .article {

@@ -39,9 +39,18 @@ html {
     overflow: hidden;
 }
 
+.top-content-background-overlay {
+    background: rgba(0, 0, 0, 0.3);
+    background-position: center;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
 .top-content-background {
-    background: rgba(0, 0, 0, 0.4) url('../img/blocks.jpg');
-    background-blend-mode: overlay;
+    background: url('../img/blocks.jpg');
     background-position: center;
     background-size: cover;
     filter: blur(5px) hue-rotate(185deg) saturate(65%);
@@ -63,6 +72,7 @@ html {
     position: absolute;
     width: calc(100%);
     bottom: 0px;
+    z-index: 1;
 }
 
 .article {
