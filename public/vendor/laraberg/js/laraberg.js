@@ -15917,13 +15917,14 @@ module.exports = function(module) {
 /*!*******************************************!*\
   !*** ./src/resources/js/api/api-fetch.js ***!
   \*******************************************/
-/*! exports provided: postPage, putPage, default, configureAPI */
+/*! exports provided: postPage, putPage, getSearch, default, configureAPI */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postPage", function() { return postPage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "putPage", function() { return putPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSearch", function() { return getSearch; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return apiFetch; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "configureAPI", function() { return configureAPI; });
 /* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/objectSpread */ "./node_modules/@babel/runtime/helpers/objectSpread.js");
@@ -15960,6 +15961,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routePrefix;
+var searchCb;
+/**
+ * Requests Gutenberg can make.
+ * Each request has a method and a regex to match with the URL provided by Gutenberg.
+ * When the matchPath() function matches Gutenberg's request with one of the requests in this object
+ * the 'run' function gets executed.
+ */
+
 var requests = {
   getBlock: {
     method: 'GET',
@@ -16006,6 +16015,11 @@ var requests = {
     regex: /\/wp\/v2\/pages\/(\d*)/g,
     run: putPage
   },
+  getSearch: {
+    method: 'GET',
+    regex: /\/wp\/v2\/search\?search=([^&]*)&per_page=([^&]*)&type=([^&]*)/g,
+    run: getSearch
+  },
   getTaxonomies: {
     method: 'GET',
     regex: /\/wp\/v2\/taxonomies\?(.*)/g,
@@ -16036,11 +16050,21 @@ var requests = {
     regex: /\/wp\/v2\/users\/\?(.*)/g,
     run: getUsers
   }
+  /**
+   * Get a reusable block
+   * @param {Object} options
+   * @param {Array} matches
+   */
+
 };
 
 function getBlock(_x, _x2) {
   return _getBlock.apply(this, arguments);
 }
+/**
+ * Get all reusable blocks
+ */
+
 
 function _getBlock() {
   _getBlock = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
@@ -16072,6 +16096,11 @@ function _getBlock() {
 function getBlocks() {
   return _getBlocks.apply(this, arguments);
 }
+/**
+ * Create a reusable block
+ * @param {Object} options
+ */
+
 
 function _getBlocks() {
   _getBlocks = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
@@ -16102,6 +16131,12 @@ function _getBlocks() {
 function postBlocks(_x3) {
   return _postBlocks.apply(this, arguments);
 }
+/**
+ * Update a reusable block
+ * @param {Object} options
+ * @param {Array} matches
+ */
+
 
 function _postBlocks() {
   _postBlocks = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
@@ -16132,6 +16167,12 @@ function _postBlocks() {
 function putBlock(_x4, _x5) {
   return _putBlock.apply(this, arguments);
 }
+/**
+ * Delete a reusable block
+ * @param {Object} options
+ * @param {Array} matches
+ */
+
 
 function _putBlock() {
   _putBlock = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
@@ -16163,6 +16204,12 @@ function _putBlock() {
 function deleteBlock(_x6, _x7) {
   return _deleteBlock.apply(this, arguments);
 }
+/**
+ * Get OEmbed HTML
+ * @param {Object} options
+ * @param {ARRAY} matches
+ */
+
 
 function _deleteBlock() {
   _deleteBlock = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
@@ -16194,6 +16241,10 @@ function _deleteBlock() {
 function getEmbed(_x8, _x9) {
   return _getEmbed.apply(this, arguments);
 }
+/**
+ * Get media mockdata
+ */
+
 
 function _getEmbed() {
   _getEmbed = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
@@ -16224,6 +16275,10 @@ function _getEmbed() {
 function optionsMedia() {
   return _optionsMedia.apply(this, arguments);
 }
+/**
+ * Get page from mockdata and target value
+ */
+
 
 function _optionsMedia() {
   _optionsMedia = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
@@ -16248,6 +16303,11 @@ function _optionsMedia() {
 function getPage() {
   return _getPage.apply(this, arguments);
 }
+/**
+ * Mock POST page request
+ * @param {Object} options
+ */
+
 
 function _getPage() {
   _getPage = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
@@ -16278,6 +16338,10 @@ function _getPage() {
 function postPage(_x10) {
   return _postPage.apply(this, arguments);
 }
+/**
+ * Mock PUT page request
+ * @param {Object} options
+ */
 
 function _postPage() {
   _postPage = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
@@ -16306,6 +16370,12 @@ function _postPage() {
 function putPage(_x11) {
   return _putPage.apply(this, arguments);
 }
+/**
+ * Returns searchCb result or an empty array
+ * @param {Object} options
+ * @param {Array} matches
+ * @returns {Array}
+ */
 
 function _putPage() {
   _putPage = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
@@ -16331,43 +16401,77 @@ function _putPage() {
   return _putPage.apply(this, arguments);
 }
 
-function getTaxonomies() {
-  return _getTaxonomies.apply(this, arguments);
+function getSearch(_x12, _x13) {
+  return _getSearch.apply(this, arguments);
 }
+/**
+ * Mock GET taxonomies request
+ */
 
-function _getTaxonomies() {
-  _getTaxonomies = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
+function _getSearch() {
+  _getSearch = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
   /*#__PURE__*/
-  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee11() {
+  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee11(options, matches) {
+    var search, perPage, type, result;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee11$(_context11) {
       while (1) {
         switch (_context11.prev = _context11.next) {
           case 0:
-            return _context11.abrupt("return", 'ok');
+            if (searchCb) {
+              _context11.next = 2;
+              break;
+            }
 
-          case 1:
+            return _context11.abrupt("return", []);
+
+          case 2:
+            search = matches[1];
+            perPage = matches[2];
+            type = matches[3];
+            _context11.next = 7;
+            return searchCb(search, perPage, type);
+
+          case 7:
+            result = _context11.sent;
+
+            if (!Array.isArray(result)) {
+              _context11.next = 10;
+              break;
+            }
+
+            return _context11.abrupt("return", result);
+
+          case 10:
+            _lib_notices__WEBPACK_IMPORTED_MODULE_11__["error"]('Search callback must return an Array.');
+            return _context11.abrupt("return", []);
+
+          case 12:
           case "end":
             return _context11.stop();
         }
       }
     }, _callee11);
   }));
+  return _getSearch.apply(this, arguments);
+}
+
+function getTaxonomies(_x14, _x15) {
   return _getTaxonomies.apply(this, arguments);
 }
+/**
+ * Mock themes request
+ */
 
-function getThemes() {
-  return _getThemes.apply(this, arguments);
-}
 
-function _getThemes() {
-  _getThemes = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
+function _getTaxonomies() {
+  _getTaxonomies = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
   /*#__PURE__*/
-  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee12() {
+  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee12(optons, matches) {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee12$(_context12) {
       while (1) {
         switch (_context12.prev = _context12.next) {
           case 0:
-            return _context12.abrupt("return", _mock_data__WEBPACK_IMPORTED_MODULE_8__["themes"]);
+            return _context12.abrupt("return", 'ok');
 
           case 1:
           case "end":
@@ -16376,22 +16480,26 @@ function _getThemes() {
       }
     }, _callee12);
   }));
+  return _getTaxonomies.apply(this, arguments);
+}
+
+function getThemes() {
   return _getThemes.apply(this, arguments);
 }
+/**
+ * Mock post types block request
+ */
 
-function getTypeBlock() {
-  return _getTypeBlock.apply(this, arguments);
-}
 
-function _getTypeBlock() {
-  _getTypeBlock = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
+function _getThemes() {
+  _getThemes = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
   /*#__PURE__*/
   _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee13() {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee13$(_context13) {
       while (1) {
         switch (_context13.prev = _context13.next) {
           case 0:
-            return _context13.abrupt("return", _mock_data__WEBPACK_IMPORTED_MODULE_8__["types"].block);
+            return _context13.abrupt("return", _mock_data__WEBPACK_IMPORTED_MODULE_8__["themes"]);
 
           case 1:
           case "end":
@@ -16400,22 +16508,26 @@ function _getTypeBlock() {
       }
     }, _callee13);
   }));
+  return _getThemes.apply(this, arguments);
+}
+
+function getTypeBlock() {
   return _getTypeBlock.apply(this, arguments);
 }
+/**
+ * Mock post types page request
+ */
 
-function getTypePage() {
-  return _getTypePage.apply(this, arguments);
-}
 
-function _getTypePage() {
-  _getTypePage = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
+function _getTypeBlock() {
+  _getTypeBlock = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
   /*#__PURE__*/
   _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee14() {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee14$(_context14) {
       while (1) {
         switch (_context14.prev = _context14.next) {
           case 0:
-            return _context14.abrupt("return", _mock_data__WEBPACK_IMPORTED_MODULE_8__["types"].page);
+            return _context14.abrupt("return", _mock_data__WEBPACK_IMPORTED_MODULE_8__["types"].block);
 
           case 1:
           case "end":
@@ -16424,22 +16536,26 @@ function _getTypePage() {
       }
     }, _callee14);
   }));
+  return _getTypeBlock.apply(this, arguments);
+}
+
+function getTypePage() {
   return _getTypePage.apply(this, arguments);
 }
+/**
+ * Mock post types request
+ */
 
-function getTypes() {
-  return _getTypes.apply(this, arguments);
-}
 
-function _getTypes() {
-  _getTypes = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
+function _getTypePage() {
+  _getTypePage = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
   /*#__PURE__*/
   _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee15() {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee15$(_context15) {
       while (1) {
         switch (_context15.prev = _context15.next) {
           case 0:
-            return _context15.abrupt("return", _mock_data__WEBPACK_IMPORTED_MODULE_8__["types"]);
+            return _context15.abrupt("return", _mock_data__WEBPACK_IMPORTED_MODULE_8__["types"].page);
 
           case 1:
           case "end":
@@ -16448,22 +16564,26 @@ function _getTypes() {
       }
     }, _callee15);
   }));
+  return _getTypePage.apply(this, arguments);
+}
+
+function getTypes() {
   return _getTypes.apply(this, arguments);
 }
+/**
+ * Mock users request
+ */
 
-function getUsers() {
-  return _getUsers.apply(this, arguments);
-}
 
-function _getUsers() {
-  _getUsers = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
+function _getTypes() {
+  _getTypes = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
   /*#__PURE__*/
   _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee16() {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee16$(_context16) {
       while (1) {
         switch (_context16.prev = _context16.next) {
           case 0:
-            return _context16.abrupt("return", 'ok');
+            return _context16.abrupt("return", _mock_data__WEBPACK_IMPORTED_MODULE_8__["types"]);
 
           case 1:
           case "end":
@@ -16471,6 +16591,36 @@ function _getUsers() {
         }
       }
     }, _callee16);
+  }));
+  return _getTypes.apply(this, arguments);
+}
+
+function getUsers() {
+  return _getUsers.apply(this, arguments);
+}
+/**
+ * Matches a Gutenberg request to the available requests in the requests variable
+ * @param {Object} options - options object provided by Gutenberg
+ * @returns {Promsie} - promise containing results
+ */
+
+
+function _getUsers() {
+  _getUsers = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_7___default()(
+  /*#__PURE__*/
+  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.mark(function _callee17() {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.wrap(function _callee17$(_context17) {
+      while (1) {
+        switch (_context17.prev = _context17.next) {
+          case 0:
+            return _context17.abrupt("return", 'ok');
+
+          case 1:
+          case "end":
+            return _context17.stop();
+        }
+      }
+    }, _callee17);
   }));
   return _getUsers.apply(this, arguments);
 }
@@ -16514,6 +16664,7 @@ function apiFetch(options) {
 }
 function configureAPI(options) {
   routePrefix = options.prefix || '/laraberg';
+  searchCb = options.searchCb || null;
 }
 
 var FetchError =
@@ -17060,6 +17211,7 @@ function configureEditor(options) {
   setupMedia(options);
   setupSidebar(options);
   setupSubmit(_gutenberg_settings__WEBPACK_IMPORTED_MODULE_1__["editorSettings"].target);
+  removeBlockManagement();
 
   if (options.maxHeight) {
     setMaxHeight(options.maxHeight);
@@ -17092,8 +17244,10 @@ function clearSubmitFromButtons() {
  */
 
 function setMaxHeight(maxHeight) {
-  var contentContainer = window.Laraberg.editor.querySelector('.edit-post-layout__content');
-  contentContainer.style.maxHeight = maxHeight;
+  var editor = window.Laraberg.editor;
+  var editPostLayout = editor.querySelector('.edit-post-layout__content');
+  editor.style.maxHeight = maxHeight;
+  editPostLayout.style.maxHeight = "calc(".concat(maxHeight, " - 56px)"); // editPostLayout.style.overflowY = 'auto'
 }
 /**
  * Sets the min-height style value
@@ -17102,8 +17256,8 @@ function setMaxHeight(maxHeight) {
 
 
 function setMinHeight(minHeight) {
-  var contentContainer = window.Laraberg.editor.querySelector('.edit-post-layout__content');
-  contentContainer.style.minHeight = minHeight;
+  var editor = window.Laraberg.editor;
+  editor.style.minHeight = minHeight;
 }
 /**
  * Sets the height style value
@@ -17112,8 +17266,9 @@ function setMinHeight(minHeight) {
 
 
 function setHeight(height) {
-  var contentContainer = window.Laraberg.editor.querySelector('.edit-post-layout__content');
-  contentContainer.style.height = height;
+  var editor = window.Laraberg.editor;
+  editor.classList.add('fixed-height');
+  editor.style.height = height;
 }
 /**
  * Setup media upload capabilities according to provided options
@@ -17164,6 +17319,16 @@ function setupSubmit(target) {
 
 function removeUploadButton() {
   Object(_element_ready__WEBPACK_IMPORTED_MODULE_2__["elementRendered"])('.components-form-file-upload button', function (element) {
+    return element.remove();
+  });
+}
+/**
+ * Removes block management link in menu
+ */
+
+
+function removeBlockManagement() {
+  Object(_element_ready__WEBPACK_IMPORTED_MODULE_2__["elementRendered"])('[aria-label^="Manage All Reusable Blocks"]', function (element) {
     return element.remove();
   });
 }
