@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e4be1d1ce824ffbde7b0e250d6829ccb",
+    "content-hash": "6368e5223bbc4cb91d2f31686f812743",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -917,16 +917,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.51",
+            "version": "1.0.52",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "755ba7bf3fb9031e6581d091db84d78275874396"
+                "reference": "c5a5097156387970e6f0ccfcdf03f752856f3391"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/755ba7bf3fb9031e6581d091db84d78275874396",
-                "reference": "755ba7bf3fb9031e6581d091db84d78275874396",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/c5a5097156387970e6f0ccfcdf03f752856f3391",
+                "reference": "c5a5097156387970e6f0ccfcdf03f752856f3391",
                 "shasum": ""
             },
             "require": {
@@ -997,7 +997,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2019-03-30T13:22:34+00:00"
+            "time": "2019-05-20T20:21:14+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1079,16 +1079,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.17.1",
+            "version": "2.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "96acbc0c03782e8115156dd4dd8b736267155066"
+                "reference": "8322b7bd1805be31867c13bf3cdaab948a0dd406"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/96acbc0c03782e8115156dd4dd8b736267155066",
-                "reference": "96acbc0c03782e8115156dd4dd8b736267155066",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/8322b7bd1805be31867c13bf3cdaab948a0dd406",
+                "reference": "8322b7bd1805be31867c13bf3cdaab948a0dd406",
                 "shasum": ""
             },
             "require": {
@@ -1135,7 +1135,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-04-27T18:04:27+00:00"
+            "time": "2019-05-16T18:44:35+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -2996,11 +2996,17 @@
         },
         {
             "name": "van-ons/laraberg",
-            "version": "dev-dev",
+            "version": "v0.0.5-beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/VanOns/laraberg.git",
+                "reference": "aa327475384335a43940c3b5e7963cd06a35df0f"
+            },
             "dist": {
-                "type": "path",
-                "url": "./../laraberg",
-                "reference": "b96b5aff2f996ec87e8438e32186b084bf60dd04"
+                "type": "zip",
+                "url": "https://api.github.com/repos/VanOns/laraberg/zipball/aa327475384335a43940c3b5e7963cd06a35df0f",
+                "reference": "aa327475384335a43940c3b5e7963cd06a35df0f",
+                "shasum": ""
             },
             "require": {
                 "embed/embed": "^3.3"
@@ -3020,11 +3026,7 @@
                     "VanOns\\Laraberg\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "VanOns\\Laraberg\\Test\\": "tests"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-3.0-or-later"
             ],
@@ -3034,7 +3036,8 @@
                     "email": "maurice@van-ons.nl"
                 }
             ],
-            "description": "A Gutenberg implementation for Laravel"
+            "description": "A Gutenberg implementation for Laravel",
+            "time": "2019-05-21T08:38:12+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -4857,7 +4860,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "van-ons/laraberg": 20
+        "van-ons/laraberg": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,
