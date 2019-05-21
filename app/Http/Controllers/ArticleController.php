@@ -5,17 +5,18 @@ namespace App\Http\Controllers;
 use App\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
-use Illuminate\Support\Facades\Log;
 
 class ArticleController extends Controller
 {
     public function __construct()
     {   $this->errors = new MessageBag();
+        
         $this->middleware(function($request, $next) {
             $this->article = Article::find($request->route('article'));
             if (!$this->article) return abort(404);
             return $next($request);
         })->only(['show', 'edit', 'update', 'destroy']);
+
         $this->middleware(function($request, $next) {
             $this->validator = $this->runValidation($request);
             return $next($request);
@@ -59,7 +60,7 @@ class ArticleController extends Controller
         $article->title = $request->title;
         $article->excerpt = $request->excerpt;
         $article->save();
-        $article->setContent($request->content, true);
+        $article->lb_content = $request->content;
         return redirect()->route('articles.show', $article);
     }
 
@@ -72,7 +73,7 @@ class ArticleController extends Controller
     {
         $this->article->title = $request->title;
         $this->article->excerpt = $request->excerpt;
-        $this->article->setContent($request->content, true);
+        $this->article->lb_content = $request->content;
         $this->article->save();
         return redirect()->route('articles.show', $this->article);
     }

@@ -17,7 +17,7 @@
                     <input type="text" class="uk-input uk-form-large laraberg-sidebar {{ $errors->get('title') ? 'uk-form-danger' : '' }}" name="title" placeholder="Title" value="{{$article->title}}">
                 </div>
                 <div class="uk-margin">
-                    <textarea name="content" id="content" hidden>{{ $article->getRawContent() }}</textarea>
+                    <textarea name="content" id="content" hidden>{{ $article->lb_raw_content }}</textarea>
                 </div>
                 </fieldset>
                 <a href="{{URL::previous()}}" class="uk-button uk-button-danger" type="submit">Cancel</a>
@@ -30,6 +30,6 @@
 
 <script>
   window.addEventListener('DOMContentLoaded', () => {
-    Laraberg.init('content', { maxHeight: '450px', laravelFilemanager: true, sidebar: true })
+    Laraberg.init('content', { laravelFilemanager: true, sidebar: true })
   })
 </script>

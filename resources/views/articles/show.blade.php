@@ -17,7 +17,7 @@
                     </div>
                 </div>
             
-                {!! $article->renderContent() !!}
+                {!! $article->lb_content !!}
         </div>
     </div>
 
