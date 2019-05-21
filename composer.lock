@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6368e5223bbc4cb91d2f31686f812743",
+    "content-hash": "59015ddf3d74c6f4a0e18929dd74bed3",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -2996,16 +2996,16 @@
         },
         {
             "name": "van-ons/laraberg",
-            "version": "v0.0.5-beta",
+            "version": "v0.0.6-beta",
             "source": {
                 "type": "git",
                 "url": "https://github.com/VanOns/laraberg.git",
-                "reference": "aa327475384335a43940c3b5e7963cd06a35df0f"
+                "reference": "9fda1daf62170cd02ef92bc56e90f7084fe49440"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/VanOns/laraberg/zipball/aa327475384335a43940c3b5e7963cd06a35df0f",
-                "reference": "aa327475384335a43940c3b5e7963cd06a35df0f",
+                "url": "https://api.github.com/repos/VanOns/laraberg/zipball/9fda1daf62170cd02ef92bc56e90f7084fe49440",
+                "reference": "9fda1daf62170cd02ef92bc56e90f7084fe49440",
                 "shasum": ""
             },
             "require": {
@@ -3037,7 +3037,7 @@
                 }
             ],
             "description": "A Gutenberg implementation for Laravel",
-            "time": "2019-05-21T08:38:12+00:00"
+            "time": "2019-05-21T14:51:50+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
