@@ -11,7 +11,13 @@
                 @csrf
                 <fieldset class="uk-fieldset">
                 <div class="laraberg-sidebar">
-                <textarea name="excerpt" placeholder="Excerpt">{{ $article->excerpt }}</textarea>
+                    <input type="text" name="title" placeholder="Title">
+                    <textarea name="excerpt" placeholder="Excerpt">{{ $article->excerpt }}</textarea>
+                    <label for="article_status">Status</label>
+                    <select name="status" id="article_status">
+                        <option value="draft">Draft</option>
+                        <option value="published">Published</option>
+                    </select>
                 </div>
                 <div class="uk-margin">
                     <input type="text" class="uk-input uk-form-large laraberg-sidebar {{ $errors->get('title') ? 'uk-form-danger' : '' }}" name="title" placeholder="Title" value="{{$article->title}}">
@@ -30,6 +36,6 @@
 
 <script>
   window.addEventListener('DOMContentLoaded', () => {
-    Laraberg.init('content', { laravelFilemanager: true, sidebar: true })
+    Laraberg.init('content', { minHeight: '600px', laravelFilemanager: true, sidebar: true })
   })
 </script>
