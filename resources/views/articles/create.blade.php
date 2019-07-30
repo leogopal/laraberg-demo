@@ -26,8 +26,10 @@
     </div>
 @stop
 
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    Laraberg.init('content', { minHeight: '600px', laravelFilemanager: true, sidebar: true })
-  })
-</script>
+@section('scripts')
+    <script>
+    window.addEventListener('DOMContentLoaded', () => {
+        Laraberg.init('content', { height: '600px', laravelFilemanager: true, sidebar: true })
+    })
+    </script>
+@stop
