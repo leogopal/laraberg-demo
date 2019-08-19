@@ -19,7 +19,7 @@
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "unisharp/laravel-filemanager": "^1.9",
-        "van-ons/laraberg": "^1.0@RC"
+        "van-ons/laraberg": "^1.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -53,8 +53,6 @@
             "Tests\\": "tests/"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",

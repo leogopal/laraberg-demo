@@ -59,8 +59,8 @@ class ArticleController extends Controller
         $article = new Article;
         $article->title = $request->title;
         $article->excerpt = $request->excerpt;
-        $article->save();
         $article->lb_content = $request->content;
+        $article->save();
         return redirect()->route('articles.show', $article);
     }
 

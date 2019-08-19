@@ -11,8 +11,6 @@
   <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.development.js"></script> --}}
   <script src="https://unpkg.com/react@16.8.6/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/moment@2.24.0/min/moment.min.js"></script>
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 
   <script src="{{ asset('vendor/laraberg/js/laraberg.js') }}"></script>
   <script src="{{ asset('js/app.js') }}" defer></script>
